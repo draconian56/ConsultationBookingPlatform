@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -94,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsultationBookingPlatform\ConsultationBookingPlatform.csproj">
-      <Project>{6445F052-7146-488F-A6DF-C183FBDD9A12}</Project>
+      <Project>{1B5120BC-2E5C-427E-8F4A-48609FBDE42E}</Project>
       <Name>ConsultationBookingPlatform</Name>
     </ProjectReference>
   </ItemGroup>
