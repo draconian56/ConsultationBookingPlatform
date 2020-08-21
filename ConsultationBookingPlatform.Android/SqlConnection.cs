@@ -16,15 +16,16 @@ using ConsultationBookingPlatform.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
 using System.IO;
+using Environment = Android.OS.Environment;
 
-[assembly: Xamarin.Forms.Dependency(typeof(SqlConnection))]
+[assembly: Xamarin.Forms.Dependency(typeof(SQLiteAsyncConnection))]
 
 namespace ConsultationBookingPlatform.Droid {
-    public class SqlConnection : ISqlConnection {
-        public SQLiteConnection GetConnection() {
+    public class SqlConnection {
+        public SQLiteConnection Connection() {
             var filename = "User.db3";
-            var documentspath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            var path = Path.Combine(documentspath, filename);
+            var documentspath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            var path = System.IO.Path.Combine(documentspath, filename);
 
             var connection = new SQLite.SQLiteConnection(path);
             return connection;

@@ -11,7 +11,7 @@ namespace ConsultationBookingPlatform.Database {
 
         // Initialse connection and creating the table
         public ConsultantDB() {
-            _sqlconnection = DependencyService.Get<ISQLite>().GetConnection();
+            _sqlconnection = DependencyService.Get<SQLiteAsyncConnection>().GetConnection();
             _sqlconnection.CreateTable<Consultant>();
         }
 
