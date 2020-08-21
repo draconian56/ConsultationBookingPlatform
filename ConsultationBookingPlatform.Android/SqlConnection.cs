@@ -20,12 +20,14 @@ using System.IO;
 [assembly: Xamarin.Forms.Dependency(typeof(SqlConnection))]
 
 namespace ConsultationBookingPlatform.Droid {
-    class SqlConnection : ISqlConnection {
-        public SQLiteAsyncConnection Connection() {
-            var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-            var path = System.IO.Path.Combine(documentsPath, "MySQLite.ldb");
+    public class SqlConnection : ISqlConnection {
+        public SQLiteConnection GetConnection() {
+            var filename = "User.db3";
+            var documentspath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var path = Path.Combine(documentspath, filename);
 
-            return new SQLiteAsyncConnection(path);
+            var connection = new SQLite.SQLiteConnection(path);
+            return connection;
         }
 
     }

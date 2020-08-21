@@ -9,15 +9,19 @@ using Xamarin.Forms;
 using ConsultationBookingPlatform.Database;
 using ConsultationBookingPlatform.iOS;
 using SQLite;
+using System.IO;
 
 [assembly: Dependency(typeof(SqlConnection))]
 namespace ConsultationBookingPlatform.iOS {
-    class SqlConnection : ISqlConnection {
-        public SQLiteAsyncConnection Connection() {
-            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            var path = System.IO.Path.Combine(documentsPath, "MySQLite.sqldb");
+    public class SqlConnection : ISQLite {
+        public SQLiteConnection GetConnection() {
+            var fileName = "User.db3";
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var libraryPath = Path.Combine(documentsPath, "..", "Library");
+            var path = Path.Combine(libraryPath, fileName);
+            var connection = new SQLite.SQLiteConnection(path);
 
-            return new SQLiteAsyncConnection(path);
+            return connection;
         }
     }
 }
