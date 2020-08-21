@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultationBookingPlatform
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultationBookingPlatform.iOS", "ConsultationBookingPlatform.iOS\ConsultationBookingPlatform.iOS.csproj", "{29F89388-5C99-43E3-A3E2-D01E182B3994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultationBookingPlatform", "ConsultationBookingPlatform\ConsultationBookingPlatform.csproj", "{1B5120BC-2E5C-427E-8F4A-48609FBDE42E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsultationBookingPlatform", "ConsultationBookingPlatform\ConsultationBookingPlatform.csproj", "{1B5120BC-2E5C-427E-8F4A-48609FBDE42E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{546B4A9A-CC38-4821-B472-4DD04D53809C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

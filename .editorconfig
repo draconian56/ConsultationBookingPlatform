@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0006: Metadata file 'C:\Users\ENV10\source\repos\ConsultationBookingPlatform\ConsultationBookingPlatform\bin\Debug\netstandard2.0\ref\ConsultationBookingPlatform.dll' could not be found
+dotnet_diagnostic.CS0006.severity = warning

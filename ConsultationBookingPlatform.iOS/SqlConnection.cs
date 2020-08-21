@@ -13,8 +13,8 @@ using System.IO;
 
 [assembly: Dependency(typeof(SqlConnection))]
 namespace ConsultationBookingPlatform.iOS {
-    public class SqlConnection : ISQLite {
-        public SQLiteConnection GetConnection() {
+    public class SqlConnection {
+        public SQLiteConnection Connection() {
             var fileName = "User.db3";
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var libraryPath = Path.Combine(documentsPath, "..", "Library");
