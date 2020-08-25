@@ -6,6 +6,5 @@ using SQLite;
 namespace ConsultationBookingPlatform.Database {
     public interface ISqlConnection {
         SQLiteAsyncConnection Connection();
-        SQLiteConnection GetConnection();
     }
 }
