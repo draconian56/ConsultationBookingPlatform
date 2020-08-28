@@ -2,33 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using SQLite;
 using SQLitePCL;
 using Xamarin.Forms;
 
 namespace ConsultationBookingPlatform.Database {
     public class UserDB {
-        private SQLiteConnection _sqlconnection;
+        static readonly Lazy<SQLiteAsyncConnection> lazyInitialiser = new Lazy<SQLiteAsyncConnection>(() => {
+            return new SQLiteAsyncConnection(UserConstants.DatabasePath, UserConstants.Flags);
+        });
 
-        // Initialse connection and creating the table
+        static SQLiteAsyncConnection Database => lazyInitialiser.Value;
+        static bool initialised = false;
+
         public UserDB() {
-            _sqlconnection = DependencyService.Get<SQLiteAsyncConnection>().GetConnection();
-            _sqlconnection.CreateTable<User>();
+            InitializeAsync().SafeFireAndForget(false);
         }
 
-        // Get all users
-        public IEnumerable<User> GetUser() {
-            return (from t in _sqlconnection.Table<User>() select t).ToList();
-        }
-        
-        // Get single user
-        public User GetUser(int id) {
-            return _sqlconnection.Table<User>().FirstOrDefault(t => t.Id == id);
+        async Task InitializeAsync() {
+            if (!initialised) {
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(User).Name)) {
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(User)).ConfigureAwait(false);
+                }
+                initialised = true;
+            }
         }
 
-        // Add new user
-        public void AddUser(User user) {
-            _sqlconnection.Insert(user);
-        }
+        // Add in commands here, either using SQL or C# ORM. I will get to it later.
     }
 }
