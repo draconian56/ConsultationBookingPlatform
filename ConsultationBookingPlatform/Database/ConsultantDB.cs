@@ -29,5 +29,7 @@ namespace ConsultationBookingPlatform.Database {
                 initialised = true;
             }
         }
+
+        // Add commands for functionality here
     }
 }

@@ -23,9 +23,7 @@ namespace ConsultationBookingPlatform
             if (isLoggedIn == "1")
             {
                 MainPage = new AppShell();
-            }
-            else
-            {
+            } else {
                 MainPage = new LoginPage();
             }
         }
