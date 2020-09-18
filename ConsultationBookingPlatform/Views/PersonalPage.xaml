@@ -2,31 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:ConsultationBookingPlatform.ViewModels"
-             x:Class="ConsultationBookingPlatform.Views.PersonalPage">
+             x:Class="ConsultationBookingPlatform.Views.PersonalPage"
+             Shell.NavBarHasShadow="True" >
     <ContentPage.BindingContext>
         <vm:PersonalViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
+        
         <StackLayout >
             <StackLayout Orientation="Horizontal">
                 <Image Source="tab_about.png" />
                 <StackLayout Orientation="Vertical">
-                    <Label Text="NAME:" />
-                    <Label Text="ID:"/>
+                    <Label Text="NAME:" FontSize="Large"/>
+                    <Label Text="ID:" FontSize="Medium"/>
                 </StackLayout>
             </StackLayout>
 
-            <Label Text="E-mail:" Padding="20,10,10,0" />
-            <Label Text="abcd@gmail.com" Padding="20,0,0,0"/>
-            <Label Text="Job:" Padding="20,10,10,0" />
-            <Label Text="CEO" Padding="20,0,0,0"/>
-            <Button Text="Edit personal information" TextColor="Black" BorderColor="Black" FontSize ="Micro"  HorizontalOptions="End" BackgroundColor="White" CornerRadius="0"/>
-            <ScrollView Orientation="Vertical" Padding=" 10,50,20,50">
-                <Label Text="Consultation history"/>
-                
+            <Label Text="E-mail:" Padding="20,10,10,0" FontSize="Medium"/>
+            <Label Text="john@green.com" Padding="20,0,0,0" FontSize="Small"/>
+            <Label Text="Job:" Padding="20,10,10,0" FontSize="Medium"/>
+            <Label Text="CEO" Padding="20,0,0,0" FontSize="Small"/>
+            <Button Text="Edit profile" BorderColor="Black" FontSize ="Medium"  
+                      CornerRadius="5" HorizontalOptions="End" Margin="5" />
+            <Button Text="Settings" Padding=" 20,20,20,20" FontSize="Title" HorizontalOptions="Center"
+                    CornerRadius="5"/>
+            <ScrollView Orientation="Vertical" Padding=" 10,20,20,50">
+                <Label Text="Consultation history" FontSize="Title"/>
+
 
             </ScrollView>
-            <Label Text="Settings" Padding=" 10,50,20,50"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
