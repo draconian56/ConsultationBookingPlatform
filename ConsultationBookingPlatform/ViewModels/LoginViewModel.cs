@@ -46,7 +46,7 @@ namespace ConsultationBookingPlatform.ViewModels
                 await App.Current.MainPage.DisplayAlert("Notification", "Successfully Login", "Okay");
                 await Xamarin.Essentials.SecureStorage.SetAsync("isLogged", "1");
                 Application.Current.MainPage = new AppShell();
-                await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+                await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
             } else {
                 await App.Current.MainPage.DisplayAlert("Notification", "Wrong email or password", "Okay");
                 await Xamarin.Essentials.SecureStorage.SetAsync("isLogged", "0");

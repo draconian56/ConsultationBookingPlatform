@@ -24,8 +24,7 @@
             <Label Text="CEO" Padding="20,0,0,0" FontSize="Small"/>
             <Button Text="Edit profile" BorderColor="Black" FontSize ="Medium"  
                       CornerRadius="5" HorizontalOptions="End" Margin="5" />
-            <Button Text="Settings" Padding=" 20,20,20,20" FontSize="Title" HorizontalOptions="Center"
-                    CornerRadius="5"/>
+            <Label Text="Settings" FontSize="Title" HorizontalOptions="StartAndExpand" Padding="10,20,20,20"/>
             <ScrollView Orientation="Vertical" Padding=" 10,20,20,50">
                 <Label Text="Consultation history" FontSize="Title"/>
 

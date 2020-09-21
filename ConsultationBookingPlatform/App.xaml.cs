@@ -17,8 +17,8 @@ namespace ConsultationBookingPlatform
             var isLoggedIn = Xamarin.Essentials.SecureStorage.GetAsync("isLogged").Result;
             var email = Database.credentials.UEmail;
             var pword = Database.credentials.Password;
-            Xamarin.Essentials.SecureStorage.SetAsync("isEmail", email);
-            Xamarin.Essentials.SecureStorage.SetAsync("isPWord", pword);
+            //Xamarin.Essentials.SecureStorage.SetAsync("isEmail", email);
+            //Xamarin.Essentials.SecureStorage.SetAsync("isPWord", pword);
 
             if (isLoggedIn == "1")
             {
