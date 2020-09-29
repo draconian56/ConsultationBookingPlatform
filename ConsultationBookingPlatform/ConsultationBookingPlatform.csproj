@@ -17,6 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\EmailPage.xaml.cs">
+      <DependentUpon>EmailPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\CalanderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

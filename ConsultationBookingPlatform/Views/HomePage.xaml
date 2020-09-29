@@ -15,54 +15,54 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+
         </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="Fill" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                <ContentView Padding="0,40,0,24" VerticalOptions="FillAndExpand">
                     <!-- <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" /> -->
                 </ContentView>
             </StackLayout>
         </StackLayout>
-        
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10" >
-                <Label Text="IT Consulting" FontSize="Title" HorizontalOptions="Center"/>
-                <Label Text="Our goal is to help you solve your IT difficulties." FontSize="16" Padding="0,0,0,20" HorizontalOptions="Center" />
-    
-        
-    
-    <!--
+
+        <StackLayout Orientation="Vertical" Padding="10,20,10,10" Spacing="10" >
+            <Label Text="IT Consulting" FontSize="Title" HorizontalOptions="Center"/>
+            <Label Text="Our goal is to help you solve your IT difficulties." FontSize="16" Padding="0,0,0,20" HorizontalOptions="Center" />
+
+
+
+            <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
     -->
-    <RefreshView x:DataType="local:HomeViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <ScrollView Grid.Row="1" BackgroundColor="White">
-                <CollectionView x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Item">
-                        <Label Text="{Binding Text}" 
+            <RefreshView x:DataType="local:HomeViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" >
+                <ScrollView Grid.Row="1" BackgroundColor="White">
+                    <CollectionView x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Padding="10" x:DataType="model:Item">
+                                    <Label Text="{Binding Text}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="16" />
-                        <Label Text="{Binding Description}" 
+                                    <Label Text="{Binding Description}" 
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer 
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:HomeViewModel}}, Path=ItemTapped}"		
                                 CommandParameter="{Binding .}">
-                            </TapGestureRecognizer>
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-            </ScrollView>
+                                        </TapGestureRecognizer>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
             </RefreshView>
         </StackLayout>
-            </Grid>
+    </Grid>
 
 </ContentPage>

@@ -10,19 +10,13 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ConsultationBookingPlatform.Views
-{
+namespace ConsultationBookingPlatform.Views {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
-    {
+    public partial class LoginPage : ContentPage {
         public LoginViewModel LoginViewModel;
-        public LoginPage()
-        {
+        public LoginPage() {
             InitializeComponent();
             this.BindingContext = new LoginViewModel();
-            
         }
-
-        
     }
 }

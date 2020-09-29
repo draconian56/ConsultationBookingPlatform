@@ -8,10 +8,8 @@ using Xamarin.Forms;
 using ConsultationBookingPlatform.Models;
 using ConsultationBookingPlatform.Views;
 
-namespace ConsultationBookingPlatform.ViewModels
-{
-    class HomeViewModel : BaseViewModel
-    {
+namespace ConsultationBookingPlatform.ViewModels {
+    class HomeViewModel : BaseViewModel {
         private Item _selectedItem;
 
         public ObservableCollection<Item> Items { get; }
@@ -19,8 +17,7 @@ namespace ConsultationBookingPlatform.ViewModels
         public Command AddItemCommand { get; }
         public Command<Item> ItemTapped { get; }
 
-        public HomeViewModel()
-        {
+        public HomeViewModel() {
             Title = "Browse";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
@@ -30,51 +27,39 @@ namespace ConsultationBookingPlatform.ViewModels
             AddItemCommand = new Command(OnAddItem);
         }
 
-        async Task ExecuteLoadItemsCommand()
-        {
+        async Task ExecuteLoadItemsCommand() {
             IsBusy = true;
-            try
-            {
+            try {
                 Items.Clear();
                 var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
-                {
+                foreach (var item in items) {
                     Items.Add(item);
                 }
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Debug.WriteLine(ex);
-            }
-            finally
-            {
+            } finally {
                 IsBusy = false;
             }
         }
 
-        public void OnAppearing()
-        {
+        public void OnAppearing() {
             IsBusy = true;
             SelectedItem = null;
         }
 
-        public Item SelectedItem
-        {
+        public Item SelectedItem {
             get => _selectedItem;
-            set
-            {
+            set {
                 SetProperty(ref _selectedItem, value);
                 OnItemSelected(value);
             }
         }
 
-        private async void OnAddItem(object obj)
-        {
+        private async void OnAddItem(object obj) {
             await Shell.Current.GoToAsync(nameof(NewItemPage));
         }
 
-        async void OnItemSelected(Item item)
-        {
+        async void OnItemSelected(Item item) {
             if (item == null)
                 return;
 
@@ -84,5 +69,5 @@ namespace ConsultationBookingPlatform.ViewModels
 
     }
 }
-    
+
 

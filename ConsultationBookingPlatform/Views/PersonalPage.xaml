@@ -8,29 +8,27 @@
         <vm:PersonalViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        
-        <StackLayout >
-            <StackLayout Orientation="Horizontal">
-                <Image Source="tab_about.png" />
-                <StackLayout Orientation="Vertical">
-                    <Label Text="NAME:" FontSize="Large"/>
-                    <Label Text="ID:" FontSize="Medium"/>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="tab_about.png" />
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="NAME: John Green" FontSize="Large"/>
+                        <Label Text="ID: 0123456789" FontSize="Medium"/>
+                    </StackLayout>
                 </StackLayout>
+
+                <Label Text="E-mail:" Padding="20,10,10,0" FontSize="Medium"/>
+                <Label Text="john@green.com" Padding="20,0,0,0" FontSize="Small"/>
+                <Label Text="Job:" Padding="20,10,10,0" FontSize="Medium"/>
+                <Label Text="CEO" Padding="20,0,0,0" FontSize="Small"/>
+                <Button Text="Edit profile" BorderColor="Black" FontSize ="Medium"  
+                          CornerRadius="5" HorizontalOptions="End" Margin="5" />
+                <Button Text="Settings" FontSize="Title" HorizontalOptions="StartAndExpand" 
+                        Padding="10,20,20,20"/>
+                <Label Text="Consultation history" FontSize="Title" Padding="10,10,0,20"/>
+
             </StackLayout>
-
-            <Label Text="E-mail:" Padding="20,10,10,0" FontSize="Medium"/>
-            <Label Text="john@green.com" Padding="20,0,0,0" FontSize="Small"/>
-            <Label Text="Job:" Padding="20,10,10,0" FontSize="Medium"/>
-            <Label Text="CEO" Padding="20,0,0,0" FontSize="Small"/>
-            <Button Text="Edit profile" BorderColor="Black" FontSize ="Medium"  
-                      CornerRadius="5" HorizontalOptions="End" Margin="5" />
-            <Label Text="Settings" FontSize="Title" HorizontalOptions="StartAndExpand" Padding="10,20,20,20"/>
-            <ScrollView Orientation="Vertical" Padding=" 10,20,20,50">
-                <Label Text="Consultation history" FontSize="Title"/>
-
-
-            </ScrollView>
-            
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
