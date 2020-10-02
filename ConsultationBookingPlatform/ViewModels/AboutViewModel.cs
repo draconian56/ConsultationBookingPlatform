@@ -25,7 +25,7 @@ namespace ConsultationBookingPlatform.ViewModels
         public async void IndiCommand()
         {
             //place holder for future delevopment
-            await App.Current.MainPage.DisplayAlert("Notification", "I will work", "Okay");
+            
             await Shell.Current.Navigation.PushAsync(new CalanderPage());
         }
         public async void BusCommand()

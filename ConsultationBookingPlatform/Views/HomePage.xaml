@@ -17,7 +17,7 @@
             <RowDefinition Height="Auto" />
 
         </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="Fill" HorizontalOptions="Fill">
+        <StackLayout BackgroundColor="white" VerticalOptions="Fill" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,24" VerticalOptions="FillAndExpand">
                     <!-- <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" /> -->

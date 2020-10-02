@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ConsultationBookingPlatform.Views.CalanderPage"
              xmlns:vm="clr-namespace:ConsultationBookingPlatform.ViewModels" 
-             xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              Title="{Binding Title}">
 
     <ContentPage.BindingContext>
@@ -11,11 +11,20 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <syncfusion:SfCalendar x:Name="calendar" ViewMode="MonthView" ShowInlineEvents="true" InlineViewMode="Inline" MaximumEventIndicatorCount="1" DataSource="{Binding CalendarInlineEvents}">
-                <syncfusion:SfCalendar.BindingContext>
-                    <vm:CalanderViewModel />
-                </syncfusion:SfCalendar.BindingContext>
-            </syncfusion:SfCalendar>
+            <DatePicker x:Name="Appointment"
+                    Format="d"
+                    Margin="30, 0, 0, 30" 
+                    MinimumDate="{x:Static sys:DateTime.Now}"
+                    DateSelected="OnDateSelected" />
+            <TimePicker x:Name="AppointmentTime"
+                    
+                    Format="t"
+                    Margin="30, 0, 0, 30" 
+                    PropertyChanged="OnTimeChanged" />
+            <Label x:Name="resultLabel" Text ="your appointment time will be"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+            <Button Text="Submit Appointment" Command="{Binding SubmitCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
