@@ -13,13 +13,13 @@ namespace ConsultationBookingPlatform.ViewModels
         public AboutViewModel()
         {
             Title = "Consultation";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamain-quickstart"));
+            //OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamain-quickstart"));
             IndividualCommand = new Command(IndiCommand);
             BusinessCommand = new Command(BusCommand);
             //var CalPage = new NavigationPage(new CalanderPage);
         }
 
-        public ICommand OpenWebCommand { get; }
+        //public ICommand OpenWebCommand { get; }
         
 
         public async void IndiCommand()

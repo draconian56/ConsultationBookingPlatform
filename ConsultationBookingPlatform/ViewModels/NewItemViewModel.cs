@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 using ConsultationBookingPlatform.Models;
@@ -9,28 +10,36 @@ namespace ConsultationBookingPlatform.ViewModels
 {
     public class NewItemViewModel : BaseViewModel
     {
-        private string text;
+        
         private string description;
-
+        
         public NewItemViewModel()
         {
             SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
             this.PropertyChanged +=
                 (_, __) => SaveCommand.ChangeCanExecute();
+            
         }
+       
+        private string _resultlabel;
 
+        
+        public string resultlabel
+        {
+            get => _resultlabel;
+
+            set => SetProperty(ref _resultlabel, value);
+
+        }
+        
         private bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(text)
+            return !String.IsNullOrWhiteSpace(_resultlabel)
                 && !String.IsNullOrWhiteSpace(description);
         }
 
-        public string Text
-        {
-            get => text;
-            set => SetProperty(ref text, value);
-        }
+        
 
         public string Description
         {
@@ -52,7 +61,7 @@ namespace ConsultationBookingPlatform.ViewModels
             Item newItem = new Item()
             {
                 Id = Guid.NewGuid().ToString(),
-                Text = Text,
+                Text = resultlabel,
                 Description = Description
             };
 

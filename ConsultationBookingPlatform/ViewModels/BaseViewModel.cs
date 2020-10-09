@@ -41,6 +41,8 @@ namespace ConsultationBookingPlatform.ViewModels
             return true;
         }
 
+
+
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
