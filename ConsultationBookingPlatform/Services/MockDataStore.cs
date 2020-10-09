@@ -14,12 +14,10 @@ namespace ConsultationBookingPlatform.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Item { Id = Guid.NewGuid().ToString(), Text = "We have appointments avaivible 9/10/2020 - 20/10/2020", Description="please add an appointment you require" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "13/10/2020 12:00pm", Description="lexacon inc" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "We have appointments avaivible 21/10/2020 - 30/10/2020", Description="please add an appointment you require" }
+              
             };
         }
 

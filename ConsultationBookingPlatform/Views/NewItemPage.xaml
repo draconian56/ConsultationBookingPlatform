@@ -5,13 +5,14 @@
              xmlns:vm="clr-namespace:ConsultationBookingPlatform.ViewModels"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              Shell.PresentationMode="ModalAnimated"
-             Title="New Item">
+             Title="Bookings">
     <ContentPage.BindingContext>
         <vm:NewItemViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
         
         <StackLayout Spacing="3" Padding="15">
+            <Label Text="Appointment time"/>
             <DatePicker x:Name="Appointment"
                     Format="d"
                     Margin="30, 0, 0, 30" 
@@ -22,10 +23,12 @@
                     Format="t"
                     Margin="30, 0, 0, 30" 
                     PropertyChanged="OnTimeChanged" />
-            <Label x:Name="resultLabel" Text ="{Binding resultlabel}" 
+            <Label Text="Your Appointment time will be"/>
+            <Label x:Name="resultLabel" Text ="{Binding resultlabel ,Mode=TwoWay}" 
                FontAttributes="Bold"
                HorizontalTextAlignment="Center" />
-            <Editor Text="{Binding Description}"/>
+            <Label Text="Please add your name and any information required"/>
+            <Editor Text="{Binding Description, Mode=TwoWay}" />
             <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
 

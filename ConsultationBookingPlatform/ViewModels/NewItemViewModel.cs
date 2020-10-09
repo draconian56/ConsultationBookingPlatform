@@ -11,7 +11,7 @@ namespace ConsultationBookingPlatform.ViewModels
     public class NewItemViewModel : BaseViewModel
     {
         
-        private string description;
+        
         
         public NewItemViewModel()
         {
@@ -23,8 +23,8 @@ namespace ConsultationBookingPlatform.ViewModels
         }
        
         private string _resultlabel;
+        private string description;
 
-        
         public string resultlabel
         {
             get => _resultlabel;

@@ -26,13 +26,12 @@ namespace ConsultationBookingPlatform.ViewModels
         {
             //place holder for future delevopment
             
-            await Shell.Current.Navigation.PushAsync(new CalanderPage());
+            await Shell.Current.Navigation.PushAsync(new NewItemPage());
         }
         public async void BusCommand()
         {
             //place holder for future delevopment
-            await App.Current.MainPage.DisplayAlert("Notification", "I will work", "Okay");
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.Navigation.PushAsync(new NewItemPage());
         }
     }
 }
